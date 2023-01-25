@@ -1,0 +1,499 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+init python:
+  def eyewarp(x):
+    return x**1.33
+  eye_open = ImageDissolve("images/fx/eye.png", .5, ramplen=128, reverse=False, time_warp=eyewarp)
+  eye_shut = ImageDissolve("images/fx/eye.png", .5, ramplen=128, reverse=True, time_warp=eyewarp)
+image black:
+      Solid("#000")
+image white:
+      Solid("#FFF")
+
+
+#Characters
+define C = Character("Charna")
+define M = Character("Ner")
+define B = Character("Belial")
+define L = Character("Lapin")
+define P = Character("Chien")
+define npc = Character("[npc]")
+
+#VFX
+image eye = im.Scale("fx/eye.png", 1280, 720)
+
+#Character images
+image Charna intro unhappy = im.Scale("Charna intro unhappy.png", 720, 720)
+image Charna intro open = im.Scale("Charna intro open.png", 720, 720)
+
+#Backgrounds
+image bg_town_night = "fantasy/fantasy06_night_dark by Karen Roe.jpg"
+image bg_room = "room/room_girl04_day by Parker Knight.jpg"
+
+#Stuff
+init python:
+    renpy.music.register_channel('sfx2', 'sfx')
+    
+#Variables
+        #Chapter 1
+    
+label start:
+    menu:
+        "Scene jump"
+        "Test Zone":
+            jump debug_zone
+        "Name":
+            jump intro_name
+        "Intro Ner":
+            jump intro_Ner
+        "Departure":
+            jump departure
+    return
+    
+label debug_zone:
+    image temp_room = "room/room_boy09_night_light by louderthanadam.jpg"
+    show temp_room with dissolve
+ 
+    "Command \"p\"...{p}Does this!"
+    scene temp_room
+    "\"p\" can also use some integers like...{p=1.0} Waiting a sec...{p=2.0}Or waiting 2 secs!"
+    "This is the normal text speed (Unless I have it as instant by default...)"
+    "{fast}This is fast!"
+    "This is the fast{fast} {b}command mid-sentence!{/b}"
+    "Now for wait."
+    "First without argument...(You have to click){w} then with 1 second... (auto){w=1.0} And lastly wait for 3-{w=3.0} secs!"
+    "No wait: it has no arguments"
+    "I can't believe this guy{w=1.0},{fast} what a fucking ni{nw}"
+    return
+
+label intro_name:
+    $valid_name = False
+    $M = ""
+    $npc = "Woman"
+    npc "To start the process we need you to fill these papers"
+    npc "Please write your name here sir"
+    "..."
+    while(valid_name == False):
+        $M = renpy.input("My name is...")
+        $M = M.strip()
+        if(M == ""):
+            "I'll choose one for you~"
+            $M = "Ner"
+            $valid_name = True
+        elif (M == "Belial"):
+            B "Identity theft is a crime ya know"
+        elif(M == "Lilith"):
+            B "I won't allow that"
+        elif(M == "Lapin"):
+            L "I'm flattered, but I don't think that would work"
+        elif(M == "Chien"):
+            P "Nay! Only one Chien allowed!"
+        elif(M == "Charna"):
+            C "Now that would be confusing, wouldn't it?"
+        elif(M == "Realenne"):
+            B "I'm not even in this game, but no"
+        else:
+            $valid_name = True
+        
+        if(valid_name == True):
+            "Is my name [M]?"
+            menu:
+                "Yes":
+                    "Done"
+                    "Welcome to the Holy Guard sir [M]"
+                    "I hope you enjoy your stead"
+                    jump intro_Ner
+                "No":
+                    "Choose again"
+        $valid_name = False
+    "If you see this send a bug report..."
+    return
+
+label intro_Ner:
+    M "It's been a couple of weeks, but I finally joined the Holy Guard"
+    M "It has been my dream ever since I was a child"
+    M "The idea of helping to save people was always attractive to me"
+    M "And being in the frontline hogging all the attention was a huge plus"
+    M "I know it is a typical dream for a young man, but I was convinced I wanted to do it"
+    #Quiero poner aquí varias imágenes de entrenamiento, con un sonido de golpe como transición, al final terminando con fracaso
+    M "I trained for years on my physical condition"
+    M "Running"
+    M "Swimming"
+    M "Climbing"
+    M "Fencing"
+    M "..."
+    M "But even though I tried as much as I could-"
+    M "I failed"
+    M "Apparently I am not cut for physical jobs"
+    M "So fighting in the Holy Guard ended up being an unreachable dream"
+    M "My dream was to end up joining the {b}Templars{/b}"
+    M "They are amazing soldiers, you see"
+    M "Templars are Wintro's top notch soldiers"
+    M "When a situation gets really dire they come in and save the day"
+    M "They are, to put it simple, better guards"
+    M "But the time where they shine the most is when monster extermination is needed"
+    M "They wear special equipment designed to take on specific monsters"
+    M "When the city is attacked by a big monster they truly become the symbol of salvation"
+    M "There is this one time were a minotaur abducted all the cows of a farmer and-"
+    M "..."
+    M "I think I am dragging this more than necessary"
+    M "But it's just..."
+    M "Very cool"
+    M "However"
+    M "The templars aren't available at all times, the equipment they use is very expensive"
+    M "And their weapons have very low durability, they usually shatter after a battle"
+    M "Due to this, they can only be deployed after the Holy Guard is absolutely sure that a monster is present in the area"
+    M "A shame really."
+    M "While failed in joining the guards, but I managed to join the investigation team"
+    M "But I am still a bit bitter for not making it to the actual guards..."
+    M "Anyway, I should go to my office, I was told that I might be assigned with my first case."
+    "I love having an office for myself!"
+    #Aqui necesito una transición a la oficina
+    
+    "While going to my office I notice a bulletin board in the hallway, it semingly has various images and announcements"
+    "Many of these seem to be information were monsters have been spotted"
+    # Aqui un mini menu para ver imagenes
+    # Termina el bulletin board
+    "Some of these monsters do not look vicious at all"
+    "I personally have never encountered any monster in my life"
+    "But I've heard that they can easily overpower humans {p}And that they are all very aggressive"
+    "I'd like to see a monster in person, the type that don't look aggressive"
+    "Can I communicate with them? {p}Can I convince them to cease a fight? {p}Can I even befriend one?"
+    "That last question could get me into trouble if I were to be heard"
+    "Lots of questions I have"
+    "Hopefully I'll be able to answer them sooner than later"
+    $npc = "Boss"
+    npc "Kid, your new assignment is here"
+    "My train of thought is interrupted by the boss"
+    "The big man comes into the office with some papers"
+    npc "You are still a rookie, so don't expect anything big"
+    "I just nod"
+    npc "Good, this case is simple. {p}There have been some murders in one of the neighboring towns and-"
+    M "Wait! {p}Murders?!"
+    npc "Don't interrupt me kid"
+    M "But- {p}Isn't muder like, something serious?!"
+    npc "It would be if it was here in the city"
+    npc "These cases always end up being the fault of some drunkard in the town"
+    npc "Just find out who it is and report back"
+    M "..."
+    npc "Understood?" 
+    "I really don't want to take this" 
+    npc "Take it or leave the guard, your choice"
+    M "..."
+    M "Understood, I'll take it"
+    npc "Good, now get to it, take one of the carriages tommorrow morning"
+    "Murders..."
+    M "Boss, may I know how many murders have been reported?"
+    npc "Don't remember to well, I think two, whatever, no one important was killed"
+    "What a philantrophist"
+    "Before I can ask him something else he is already gone"
+    M "Why murders of all the things"
+    M "I really don't want to take a job that involves people's lives this early in my career"
+    M "And not being given the choice stings even more"
+    M "Goddamnit"
+    M "GODDAMIT"
+    npc "SHUT IT NEWBIE, DON'T MAKE A RUCKUS"
+    M "..."
+    M "I should g-et some rest and then think about this..."
+    #Scene transition to preparations
+    jump departure
+    return
+    
+label departure:
+    $newspaper = True
+    $breakfast = True
+    play music "sounds/sfx/SunnyDay.mp3"
+    scene bg_room with dissolve
+    "..."
+    "The morning greets me with the sounds of birds singing and the rays of light seeping through the window in my room"
+    "With a day this relaxing I wish I could stay here forever"
+    M "hrg"
+    "My eyelids refuse to open {p}The bed is still to powerful for te to escape from it's charms"
+    #joke here of trying to escape the bed
+    "Ok that's enough"
+    M "Up I go..."
+    "Lazily, I stand up from my bed, still groggy from my sleep"
+    M "..."
+    M "I have to go..."
+    "I stand still and look at my room for a while {p}I'm not gonna see it for some time after all"
+    "Just a bed, 2 drawers and a closet {p}My house is pretty small"
+    "Not that I need a bigger one, I don't have anyone living with me."
+    "And cleaning is already a chore {b}I wouldn't stand having to clean a bigger house"
+    M "Haa, whatever {p}I need to get ready for today"
+    "I make my bed and go downstairs"
+    while newspaper or breakfast:
+        menu: 
+            M "Now what should I do..."
+            "Check for newspaper" if newspaper:
+                M "So far nothing out of the ordinary, caught thieves, some gossip about the nobles and advertisements"
+                M "Nothing really interesting happens here in the city {p}It is well protected after all, no monster would try anything here"
+                M "That and the human crime rates are low, thanks to the highest ranked guards being here 24/7"
+                M "I am thankful that I can have such a peaceful life in here. {p}I do not have to worry about real problems on a daily basis."
+                M "..."
+                M "Ah, this seems mildly interesting"
+                # debería oscurecer los bordes de la pantalla aquí
+                "An article written by ----"
+                "The ice tribe located on the far west has started moving again. {p}Seems that they have located closer to the outer towns of the region."
+                "They has always evaded the Holy Guard, so our relationship with said group has always been on the negative side."
+                "As many of you know, they have violently rejected our attempts to bless their tribe in the past. {p}Chasing away our priests that just wanted to help them"
+                "Since they aren't as advanced as us, the Holy Guard came to the conclusion that the tribe isn't ready yet to accept the true beliefs."
+                "So they were deemed harmless as long as they don't bother them, the tribe would be left alone for some years"
+                "However, one of the inspectors now has confirmed something that many citizens feared {p}The ice tribe is now allied with monsters."
+                "They have broken one of the most important rules that our god has given us {p}Which is to avoid monsters and demons."
+                "We have reached out to the Holy Guard to see what they had to say."
+            
+                "The Holy Guard released this official stated:"
+                "What the Ice tribe has done is unforgivable, they not only have accepted monsters in their rank, but one of their leaders is a monster"
+                "Our investigators have confirmed that said leader is a {b}Glacies{/b}.{p}Fearsome monsters that are almost invincible in snowy regions."
+                "Should the Ice tribe decide to strengthen their army and attack us in winter we could end up facing a high level threat"
+                "We are doing our best to decide how we will approach this situation. {p}   -Holy Guard representative"
+            
+                M "Thrilling I guess..."
+                M "This newspaper is really toning down how the church treated this tribe in the past"
+                M "They have sent multiple batallions of knights for years now"
+                M "I am surprised that the tribe has defeated all these assaults for years"
+                M "They must be very strong"
+                M "As to why would the Holy Guard insist so much to conquer a small tribe is beyond me."
+                M "..."
+                M "Glacies... {p}I think my mother once told me about them..."
+                $npc = "System"
+                npc "Glacies species has been added to the Monsterpedia"
+                #ALPHA ONLY
+                npc "TENTATIVE FEATURE {p}May add an encyclopedia similar to Monster Girl Quest's"
+                $newspaper = False
+            "Cook breakfast" if breakfast:
+                $breakfast = False
+                M "I should start cooking now, I have to go early and something that I absolutely refuse to do is fasting."
+                M "If I don't eat properly I get awfully pissy, I don't want to leave a bad impression in my first real task in the investigation team."
+                M "There have been occasions when I respond in a rude way or I give a reckless answer to someone and it ends up backfiring at me"
+                M "..."
+                M "That day I learned that the only person I cannot outrun is my mother..."
+                M "I wasn't a kid mom... {p}I didn't deserve a spanking that painful..."
+                M "I'm getting sidetracked, I should just start cooking before it gets too late."
+                "I start rummaging through the kitchen, I try to find any ingredients that could go together..."
+                "...{p}......{p}........."
+                "But to no avail"
+                M "Hrmm, I guess it will have to be eggs again... {p}Now where are those little round dastards..."
+                M "I used to work in a small restaurant, started up cleaning stuff, then a waiter, and finally ended up as a cook."
+                M "I had no experience in the kitchen but since it was a small establisment I was forced to take on various roles"
+                play sfx2 "sounds/sfx/EggCrack.mp3"
+                queue sfx2 "sounds/sfx/Cooking.mp3" loop
+                ""
+                stop sfx2  fadeout 1.0
+    jump intro_travel
+    return
+
+label intro_travel:
+    "How peaceful"
+    "Going thru the fo"
+    return
+    
+label intro_meet_Charna:
+    "Without even realizing it, I am already in front of her, she is carefully inspecting the fabric"
+    M "..."
+    C"No... that won't do..."
+    "She seems to be very focused on said material, she seems to not have seen me yet"
+    C ". . ."
+    C"Nah, old people only use those multi-colored ponchos..."
+    "Her hair is short and carefullly cut, a pink color increases on intensity at the edges of her hair, something I haven't seen before."
+    C ". . . . . ."
+    C "It could work with the young ladies but... nah, thay all have bad taste..."
+    "Her eyes are pretty, pink iris with...  white pupils?{p}I have heard these happen from a disease, should I be concerned?"
+    C". . . . . . . . ."
+    C"I'll have to promote these if I want to get my money's worth..."
+    C". . . !"
+    C"Wha-?"
+    "Her lips also- {nw}"
+    C"Hey hey hey hey hey!"
+    C "Mister!{p}How long have you been there?!"
+    "She finally realizes I am here, and I realize I have just been staring at her this whole time"
+    "{fast} How awkward"
+    M "Erm, sorry miss, I didn't mean to sneak up on you like that"
+    C "P- please don't do that, in general, don't you know some people around here can react violently?"
+    M"I don't actually"
+    C"Huh?{p} are you foreign or something?"
+    "She pauses a bit and looks at me thoroughly"
+    C"Alright you do look foreign to me, I assume you are...?"
+    M"Yes"
+    C"I am serious with what I said tho, don't sneak up on people please~"
+    M"Yeah, sorry, I won't"
+    "She let's out a short sigh"
+    C"So, anything I can help you with? {p}Or you are just going out there staring at pretty young ladies like me~?"
+    M"I said I'm sorry..."
+    "I am the one who approached her, I might as well make some small talk"
+    menu:
+        M "Anyway, I wanted to ask you about..."
+        "the hotel":
+            M "Work - In - Progress"
+        "what you are holding":
+            M "the fabric you are holding, it doesn't look like anything I've seen before."
+            M "And the way you were staring intently at it, I assume it is something special"
+            "Her eyes light up"
+            C"Oh!{w} finally someone with an eye for clothing!"
+            "She gives me a big smile"
+            C"This is called denim, I got it recently from a travelling merchant"
+            C"Aestethically looks very sweet, but it takes one to wear it a couple of times to make it comfortable."
+            C"But it is seriously worth it, it is a bit tight, so it accentuates the figure of the legs"
+            C"It should be a hit on the ladies in theory but..."
+            C"I've come to learn it doesn't sell very well on here, apparently it doesn't bring any protection to cold..."
+            C"Maybe I should just stick with plain old wool and silk... {p}It is what sells after all."
+            C"But it is so boring... aren't clothes supposed to reflect your personality? {p}Bunch of dull people..."
+            "Alright she is a tailor, no ones gets this interested when talking about fabric"
+            "I'll just press on"
+            M"I have never heard of this \"Denim\" material, I assume it is new?"
+            C"Right, I don't know who makes these, but they look pretty sweet and that means I have to try and make some good clothing"
+    C"But enough about that, what brings you here~?"
+    "Ah, she cut the conversation"
+    C"I don't remember a face like yours, and your clothes are a bit too nice for a town"
+    C"So my guess is that you are from a city, right?"
+    M"Ah-"
+    "Aaaaand my \"Secret identity\" is being torn down exactly as I arrive"
+    C"Ahaha~ I hit the nail didn't I?"
+    C". . ."
+    C"Hey hey, you seem downcast all of sudden{w}, wasn't I supposed to know that?"
+    "And I am here just giving away what am I"
+    M"I'd rather not have people knowing that I am from a city.{p}How obvious do I look?"
+    C"My my, someone is here in incognito mode~"
+    C". . ."
+    M". . ."
+    C"My apologies, I shouldn't be teasing outsiders~"
+    C"So..."
+    menu:
+        C"If you don't mind me asking, what brings you here?"
+        M"I am on a vacation":
+            C"I see I see"
+        M"I have some personal business, family matters":
+            C"Oh, is that it?"
+        M"I'd rather not say":
+            C"Hmm"
+    C"Ok then, I shouldn't be poking in other person's matters"
+    C"But, if you want to look more like a local..."
+    C"Why don't you come to my shop some time later?"
+    C"I sell various clothes that will make you look like you fit right in here"
+    C"Ponchos are on sale right now~"
+    "She seems enthusiastic every time she talks about clothing"
+    M"I will have it in mind, miss"
+    C"That didn't sound very convinced..."
+    C"Anyway, I'm serious, if you want to know something about the town don't be afraid to come and pay a visit"
+    C"I have to go now, I have an appointment with a customer in 10 minutes, and I have to keep a good image for my business"
+    C"Just ask about Charna, alright?"
+    "What a sudden change of expressions, from devilish to sincere in a second"
+    M"Ah, sure, I will."
+    C"That's more like, I hope we meet again mister..."
+    "I am just a new recruit, so I don't see a reason to hide my name"
+    M"[M], a pleasure to meet you"
+    C"Same, [M].{p}I will be going then, don't forget!"
+    C"Ask for Charna's clothing shop!"
+    "Saying that, she leaves the place hurried"
+    "What an interesting first acquaintance to make in this town"
+    "She also stuck out from the crowd, her clothes are very different from stuff I've seen in the past"
+    "Why is it that all people who work for fashion related stuff like to dress out very different from everyone else."
+    M"Charna huh..."
+    M"I just arrived and I am starting to meet interesting people already"
+    M"She is cute I'll admit"
+    M"Enough diversions, I should head out to the local guard's building, they should have more info on the corpses..."
+    return
+
+label intro_Charna:
+    return
+  
+label Cafe_1:
+    #Llegando al cafe
+    "We are getting closer, a small building sits at the end of the street"
+    "Warm light comes out of the window, comparing it with the cold and dark ambience outside, it gives the place a cozy appearance from the outside"
+    "The woman has been asked me generic questions while coming here"
+    " 'Do you like the weather in this town?'"
+    " 'Any place that has caught your interest?'"
+    " 'Have you checked the plaza?'"
+    "Boring questions that seem to be asked just to break the silence while we walk alone"
+    "After a couple of moments, we are at the café's doorstep"
+    #Entrando al cafe, Meet Belial
+    M "Ladies first"
+    C "How gentlemanly of your part"
+    "She says while going in, showing a discreet smile"
+    "..."
+    "The intoxicating aroma of coffee greets me as soon as I step in"
+    "Despite seemingly being empty, the place is warm and gives a welcoming athmosphere"
+    "The sound of dishes being moved around can be heard back in the kitchen, so the staff must still be here"
+    "[Charna] looks around, searching for someone, her gaze stopping at the direction where the noise is coming from"
+    C"Bel! Are you here?"
+    "[Charna] says out loud, calling out to someone"
+    C "Belial!"
+    $[Belial] = "Bel"                                                          
+    B "Aye that's me! I hear ya!"
+    B "Give me a moment please! there is a ton of dishes that need some good cleanin'!"
+    "The voice of what sounds like a young man with a funny accent answers her"
+    C "It's me, Charna!"
+    B "Ah! Girl! What brings ya here?"
+    C "I brought someone from the main city!"
+    C "They had some questions, I didn't want to stay out in the night, se we came here"
+    "..."
+    "We are only met with silence, [Charna] just awaits a response, silently"
+    "..."
+    C "Belial?"
+    B "Ya, ya, sorry, I got caught up processing what you just told me"
+    "Is it so rare to have people from the city coming over?"
+    B "We were about to close ya know?"
+    C "I'm sorry Belial, but I really needed a place to stay for a while and you were the closest"
+    "[Belial] softly interrupts her"
+    B "Alright, alright girl, I understand, take a seat wherever you please"
+    "[Charna] nods and then looks at me"
+    C "Let's go"
+    M "Lead the way miss"
+    #Charna Talks
+    "We take a seat"
+    "The window is at the opposite side of our table, we are looking at each other"
+    "Before I can address her, she initiates the conversation"
+    "The sweet aroma of the coffee still permeating the local"
+    C "I may have some useful information, but I expect that you also share some with me"
+    "Damn it"
+    "This situation crossed my mind but I hoped that nothing happened"
+    "I haven't gotten any new information since I arrived so I hopped at the chance to get new info when she showed up"
+    "I should try to get her information first, it is prohibited to tell citizens the details about our cases"
+    M "I'm afraid I can't do that miss, I was ordered to be secretive about our findings"
+    C "..."
+    "She looks unhappy"
+    C "I won't accept a no for an answer, I won't ignore a chain or murders that is taking place in my hometown"
+    M "..."
+    "Charna's expression is very serious"
+    "The sweet aroma of coffee permeates the room"
+    C "The corpses are found naked in desolate and dark places of the town, their clothes sprawled around the streets, seemingly following the trail the victim went through"
+    M "Yes, that is how we have found them"
+    C "The clothes are in almost perfect state, they weren't yanked off or ripped apart from the victims"
+    M "We think that these were taken off willingly by the victim"
+    "Charna suddenly looks more interested, she continues"
+    C "They all have various scratch marks in their bodies, especially in the back, the amount of lines indicate that the attacker has 4 claws"
+    C "However, these marks cannot be the cause of decease, while they have bled from them, they aren't deep enough to kill a person"
+    "I... didn't know that..."
+    C "Another interesting bit is, no one heard their screams, you'd think that the victims would call out for help when attacked"
+    C "But it seems that is not the case"
+    C "They willingly go to a dark secluded place at night, get attacked and just accept it?"
+    M "..."
+    "Charna looks at me, it almost feels like her gaze penetrates my flesh"
+    C "I've already told you plenty details, so tell me Mr detective"
+    C "What conclusion have your higher ups came to?"
+    "I was only informed about the basics about this case before arriving"
+    "That and my only instructions were to just come here and get more info"
+    "While I did get new details, seems that this village girl did a way better job at investigating than both the guards and forensic team"
+    C "I'm waiting for an answer"
+    "Charna has her eyes fixated on me, waiting for an answer"
+    "I should try to come up with something"
+    M "The victims must have been drunk"
+    C "mhm?"
+    M "Drunken people have both their reasoning and senses dulled"
+    M "We think that the killer must be intoxicating the victims and then murdering them once they are far away"
+    C "..."
+    "I can't read her expression"
+    C "How does that explain the undressing...?"
+    M "..."
+    C "That would be a good explanation if it there were few murders"
+    C "But it is hard to believe that many people were silently lured out to the dark"
+    C "Especially if they were drunk"
+    M "It is just an hyphotesis based on what we know"
+    C "May I ask why you haven't mentioned the possibility of monsters being involved?"
+    M "huh?"
+    C "You are either hiding that or for some reason you think it is not"
+    return

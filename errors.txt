@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/story/Intro_1.rpy", line 302: Only one say menuitem may exist per menu.
+    rei "You should take a rest now, if they are coming back you should be prepared"
+                                                                                    ^
+
+Ren'Py Version: Ren'Py 8.0.1.22070801
+Wed Jan 11 22:10:20 2023

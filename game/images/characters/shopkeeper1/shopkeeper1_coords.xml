@@ -1,0 +1,30 @@
+<head>
+<xpos>177</xpos>
+<ypos>0</ypos>
+</head>
+<eyebrows>
+<xpos>210</xpos>
+<ypos>73</ypos>
+</eyebrows>
+<eyes>
+<xpos>213</xpos>
+<ypos>91</ypos>
+</eyes>
+<mouth>
+<xpos>220</xpos>
+<ypos>115</ypos>
+</mouth>
+<body>
+<xpos>189</xpos>
+<ypos>377</ypos>
+</body>
+<extra>
+	<scowl>
+		<xpos>218</xpos>
+		<ypos>95</ypos>
+	</scowl>
+	<sweatdrop>
+		<xpos>276</xpos>
+		<ypos>119</ypos>
+	</sweatdrop>
+</extra>

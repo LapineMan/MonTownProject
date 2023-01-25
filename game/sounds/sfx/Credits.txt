@@ -1,0 +1,11 @@
+footsteps 1, https://soundbible.com/2202-Hard-Shoes.html
+explosion_big, https://soundbible.com/1807-Explosion-Ultra-Bass.html
+water_drop, https://soundbible.com/1460-Water-Splash.html
+water_splash, https://soundbible.com/1460-Water-Splash.html
+neck_snap, https://soundbible.com/1953-Neck-Snap.html
+bone_crush, https://soundbible.com/925-Bone-Crushing.html
+wind_1, https://soundbible.com/1810-Wind.html
+tear_1, https://soundbible.com/752-Flesh-Tearing.html
+slow_breath, https://soundbible.com/1813-Slowed-Breathing.html
+scream_1, https://soundbible.com/1033-Zombie-In-Pain.html
+door_close, https://soundbible.com/900-Door-Close.html

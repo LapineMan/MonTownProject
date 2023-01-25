@@ -1,0 +1,21 @@
+Oh, hey [classes.Player.name]! {p}Need something?
+[classes.Player.name]! {p}What's on your mind.
+Hey handsome~{p}Were you looking for me?
+Checame la pichancha a ver si charcha o esta chafa, el respeto al derecho ajeno es la paz. Checame la pichancha a ver si charcha o esta chafa, el respeto al derecho ajeno es la paz. Checame la pichancha a ver si charcha o esta chafa, el respeto al derecho ajeno es la paz. 
+;
+A friend of mine owns a cafe nearby, you should check it out.
+Don't you want a Poncho?{p}Got a lot in stock...
+What do you think about the town?{p}Are you enjoying your time here?
+;
+Mhmhm|{i}Charna seems to be in a good mood today{/i}|Hey hey
+The day is as cold as ever... |[classes.Player.name] wanna stop by Bel's cafe?
+This is a single line quote
+;
+Friendly
+;
+So, are you free? {p}I know a place we could go hang out~
+You know, feels nice to not hide what am I to you.
+;
+Eh, I think I am a bit tired right now...
+Mmh? Sorry, I got lost in thought...
+I see... {p}{i}Charna seems to be distracted{i}

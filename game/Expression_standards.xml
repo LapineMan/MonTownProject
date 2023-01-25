@@ -1,0 +1,29 @@
+<eyebrows>
+	<eb>eb_mid</eb>
+	<eb>eb_up</eb>
+	<eb>eb_down</eb>
+	<eb>eb_angry</eb>
+	<eb>eb_sad</eb>
+</eyebrows>
+<eyes>
+	<ey>ey_open</ey>
+	<ey>ey_mid</ey>
+	<ey>ey_closed</ey>
+	<optional>
+		<ey>ey_pupil</ey>
+		<ey>ey_dead</ey>
+	</optional>
+</eyes>
+<mouth>
+	<mo>mo_vhappy</mo>
+	<mo>mo_happy</mo>
+	<mo>mo_open</mo>
+	<mo>mo_closed</mo>
+	<mo>mo_sad</mo>
+</mouth>
+<extras>
+	<ex>scowl</ex>
+	<ex>sweatdrop</ex>
+	<ex>blush</ex>
+	<ex>tears</ex>
+</extras>

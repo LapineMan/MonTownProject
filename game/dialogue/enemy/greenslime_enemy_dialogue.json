@@ -1,0 +1,22 @@
+{
+    "defeat": [
+        [
+            ["", "eb_sad ey_closed mo_upset", "AWAWAWAWAWA"],
+            ["", "eb_sad ey_closed mo_upset", "Why would you hurt a cute slime!"]
+        ],
+        [
+            ["", "eb_sad ey_closed mo_upset", "Owie"],
+            ["", "eb_sad ey_closed mo_upset", "That hurtsh"]
+        ]
+    ],
+    "attack" : [
+        [
+            ["", "eb_upset ey_circles mo_open", "Horaaa!"]
+        ],
+        [
+            ["", "eb_upset ey_circles mo_open", "Eat some slime!"]
+        ]
+    ],
+    "hurt": "ey_upset eb_up mo_upset",
+    "defeated": "ey_upset eb_up mo_upset"
+}

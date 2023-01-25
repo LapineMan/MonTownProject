@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/special_labels/game_over.rpy", line 36, in script
+    with slow_wet(6, 5)
+  File "game/special_labels/game_over.rpy", line 36, in <module>
+    with slow_wet(6, 5)
+TypeError: object of type 'int' has no len()
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/special_labels/game_over.rpy", line 36, in script
+    with slow_wet(6, 5)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 1651, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\python.py", line 1080, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\python.py", line 1073, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/special_labels/game_over.rpy", line 36, in <module>
+    with slow_wet(6, 5)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\transition.py", line 527, in __init__
+    ramplen = len(ramp)
+TypeError: object of type 'int' has no len()
+
+Windows-10-10.0.19041 AMD64
+Ren'Py 8.0.1.22070801
+Monster Town Project 0.01
+Thu Jan 19 18:19:38 2023

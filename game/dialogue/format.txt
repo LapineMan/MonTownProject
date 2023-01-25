@@ -1,0 +1,11 @@
+Idle 0
+;
+Conversation (Character is indifferent) 1
+;
+Happy conversation (Low favor) 2
+;
+Friendly conversation (Mid to high favor) 3
+;
+Friend conversation (High favor) 4
+;
+Tired conversation 5

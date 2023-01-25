@@ -1,0 +1,23 @@
+{
+    "greeting": [
+        [
+            ["Ah!{p}[player.name]{p}Need something?", "eb_up mo_open"]
+        ],
+        [
+            [". . .", "ey_closed mo_serious"],
+            ["Oh...?{p}Sorry, I was spacing out...{p}Where you looking for me?", "ey_mid mo_open"]
+        ]
+    ],
+    "talk" : [
+        [
+            ["What have you been doing lately?", "eb_up mo_talk"],
+            ["I can't imagine how hard it must be to be travelling across the mountains as often as you do", "mo_serious"]
+        ],
+        [
+            ["Remember to drop by my shop if you need anything...", "ey_closed mo_talk"],
+            [". . .", "mo_happy"],
+            ["I am not good at all when it comes to adventuring stuff...{p}But If I can help...{p}", "mo_serious"],
+            ["Please let me know", "ey_open"]
+        ]
+    ]
+}

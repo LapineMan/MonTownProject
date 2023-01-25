@@ -1,0 +1,12 @@
+File number relates to the location's id.
+
+Line should start with a character ID, followed by starting hour, end hour and activity
+Hour uses 24hr format inside the code.
+
+1,9 14 1
+
+For example, the above numbers mean "CHARNA from 9AM to 3PM is IDLE"
+Assuming this was written in the "0" file, then that means Charna is in said location.
+
+The code should...
+First number is A, second is B: If current hour is greater or equal than A and lesser or equal than B, add character to list
