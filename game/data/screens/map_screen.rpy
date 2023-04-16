@@ -1,79 +1,66 @@
 #Maps
-
-
-transform Map_Icon_Transform:
+transform map_button_transform:
+    anchor (0.5, 0.5)
     on idle:
-        linear 0.1 matrixcolor TintMatrix("#AAAAAA")
+        easeout 0.1 matrixcolor TintMatrix("#AAAAAA") zoom 0.9
     on hover:
-        linear 0.1 matrixcolor TintMatrix("#FFFFFF")
+        easeout 0.1 matrixcolor TintMatrix("#FFFFFF") zoom 1.0
 
 screen Map_Screen(world):
     modal True
 
-    default map = world.get_current_map()
-    default mapData = map["locations"]
-    default mapName = map["name"]
-    default mapId = map["mapId"]
-    default iconString = ""
+    default map_data = world.map_data
+
     python:
         tooltip = GetTooltip()
 
     frame:
-        background "images/maps/map_{}.png".format(mapId)
-    frame:
-        background "images/maps/mapframe.png"
-    for i in mapData:
-        $current = world.locations[i["locRef"]]
-        # Normal sensitive button
-        if(current.locState == LocState.NORMAL):
-            # Set icon ugliness
-            python:
-                if(current.locType == LocType.NORMAL):
-                    iconString = "normal"
-                elif(current.locType == LocType.SHOP):
-                    iconString = "shop"
-                elif(current.locType == LocType.ADVENTURE):
-                    iconString = "adventure"
-                elif(current.locType == LocType.TRANSITION):
-                    iconString = "transition"
-                elif(current.locType == LocType.HOME):
-                    iconString = "home"
-                else:
-                    iconString = "skull"
+        background "images/maps/{}_map.png".format(world.current_map)
+    for l in map_data["locations"]:
+        $current_location = world.locations.get(l["loc_id"])
 
-            imagebutton idle "images/maps/mapicon_{}.png".format(iconString) at Map_Icon_Transform:
-                action [Return(i["locRef"])]
-                tooltip world.get_location_name(i["locRef"])
-                xpos i["xpos"]
-                ypos i["ypos"]
+        # Normal sensitive button
+        if(current_location.location_state == LocState.NORMAL):
+            # Set icon ugliness
+            imagebutton idle "images/maps/mapicon_normal.png" at map_button_transform:
+                action [Return(l["loc_id"])]
+                tooltip current_location.name
+                xpos l["xpos"]
+                ypos l["ypos"]
         # Shown but innaccessible
-        elif (current.locState == LocState.BLOCKED):
+        elif (current_location.location_state == LocState.BLOCKED):
             imagebutton idle "images/maps/mapicon_lock.png":
                 action NullAction()
-                tooltip world.get_location_name(i["locRef"])
-                xpos i["xpos"]
-                ypos i["ypos"]
+                tooltip current_location.name
+                xpos l["xpos"]
+                ypos l["ypos"]
 
-        elif(current.locState == LocState.BOSS):
+        elif(current_location.location_state == LocState.BOSS):
             imagebutton idle "images/maps/mapicon_bossbattle.png":
-                action NullAction()
-                tooltip world.get_location_name(i["locRef"])
-                xpos i["xpos"]
-                ypos i["ypos"]
+                action Confirm("A difficult enemy awaits!\nDo you wish to proceed?", [Return(l["loc_id"])])
+                tooltip current_location.name
+                xpos l["xpos"]
+                ypos l["ypos"]
 
-        elif(current.locState == LocState.DEMON):
+        elif(current_location.location_state == LocState.DEMON):
             imagebutton idle "images/maps/mapicon_demon.png":
-                action NullAction()
-                tooltip world.get_location_name(i["locRef"])
-                xpos i["xpos"]
-                ypos i["ypos"]
+                action Confirm("Something horrible lurks this place...\nProceed with caution", [Return(l["loc_id"])])
+                tooltip current_location.name
+                xpos l["xpos"]
+                ypos l["ypos"]
 
         else:
             imagebutton idle "images/maps/mapicon_warning.png":
-                action NullAction()
-                tooltip world.get_location_name(i["locRef"])
-                xpos i["xpos"]
-                ypos i["ypos"]
+                action Confirm("Some events may become unavailable after this\nDo you wish to proceed?", [Return(l["loc_id"])])
+                tooltip current_location.name
+                xpos l["xpos"]
+                ypos l["ypos"]
+
+    frame:
+        align (0.5, 0.05)
+        text map_data["name"]:
+
+            align (0.5, 0.5)
 
     # Tooltip stuff
     if tooltip:

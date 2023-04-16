@@ -3,9 +3,9 @@ label Game_Start:
     scene black with fade
     centered "Game Start:{w} Now{w=0.5}.{w=0.5}.{w=0.5}.{w=1}"
     stop music
-    play sound "sounds/sfx/footstepsforest1.mp3" volume 0.5
-    play music "sounds/sfx/SunnyDay.mp3" volume 0.6 loop
-    scene forestsky at left_to_right_vslow
+    play sound "audio/sounds/footsteps_grass.mp3" volume 0.5
+    play music "audio/sounds/SunnyDay.mp3" volume 0.6 loop
+    scene bg_forest_sky at left_to_right_vslow
     show black at customAlpha(0.75)
     with Fade(1.0, 0, 5.0)
 
@@ -20,7 +20,7 @@ label Game_Start:
 
     Well{w}, {b}jobs{/b}\n{p}Your second job is quite close from your first destination, and it pays quite well\n{p}If all goes according to your plan you could finish the small job first and then the bigger one after\n{p}With the payments of both you could live carefree for a month or two\n{p}That is what you hope at least
     """
-    play sound "sounds/sfx/footstepsforest1.mp3" volume 0.5
+    play sound "audio/sounds/footsteps_grass.mp3" volume 0.5
     centered "As for the jobs you have accepted...{p}The first one that should be easier..."
     centered """
     {size=+25}Slime hunting{/size}\n{p}{i}'Looking for a warrior capable of dealing with slimes'{/i}\n{p}{i}'Amount: 3 Slimes as of the report's creation'{/i}\n{p}{i}Payment: 80 gold{/i}
@@ -33,11 +33,9 @@ label Game_Start:
     scene black with Fade(1.0, 0.0, 1.0)
     # Set some variables
     python:
-        world.set_current_location(5)
-        updateScene()
-        eventTriggers.append(Event_Trigger("Map_Intro", 5, None, None, None))
-        world.disable_all()
-        world.enable_locations([0, 1])
+        update_scene()
+        event_manager.add_event("Map_Intro")
+        world.set_location_state(["reina_plaza", "reina_gate"], LocState.NORMAL)
     jump Town_Label
 
 label title_card:

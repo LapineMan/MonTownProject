@@ -55,52 +55,6 @@ layeredimage charna:
     attribute sweatdrop pos(179, 118)
     attribute blush pos(179, 118)
 
-
-image chien_eyes_ey_blink:
-    "chien_eyes_ey_open"
-    choice:
-        0.25
-    choice:
-        2.5
-    choice:
-        3.5
-    choice:
-        5.0
-    "chien_eyes_ey_mid"
-    0.03
-    "chien_eyes_ey_closed"
-    0.03
-    "chien_eyes_ey_mid"
-    0.03
-    repeat
-
-layeredimage chien:
-    always "chienbody" pos(34, 190)
-
-    group outfit auto:
-        pos (92, 267)
-        attribute of_casual default
-        attribute of_none null
-
-    always "chienhead" pos(78, 0)
-
-    group eyebrows auto:
-        pos(137, 177)
-        attribute eb_neutral default
-
-    group eyes auto:
-        pos(134, 198)
-        attribute ey_blink default
-
-    group mouth auto:
-        pos(140, 225)
-        attribute mo_neutral default
-
-    attribute sweatdrop pos(203, 222)
-    attribute blush pos(141, 214)
-    attribute scowl pos(136, 190)
-
-
 layeredimage liz:
     always "lizbody" pos(0, 124)
 

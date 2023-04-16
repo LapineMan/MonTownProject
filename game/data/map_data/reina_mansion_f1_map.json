@@ -1,0 +1,25 @@
+{
+    "name": "Mansion F1",
+    "locations":[
+        {
+            "loc_id": "reina_dining",
+            "xpos":652,
+            "ypos":361
+        },
+        {
+            "loc_id": "reina_guest",
+            "xpos":976,
+            "ypos":359
+        },
+        {
+            "loc_id": "reina_kitchen",
+            "xpos":448,
+            "ypos":555
+        },
+        {
+            "loc_id": "reina_gate",
+            "xpos":151,
+            "ypos":360
+        }
+    ]
+}

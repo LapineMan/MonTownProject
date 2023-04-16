@@ -1,0 +1,18 @@
+{
+    "rpg":{
+        "max_hp" : 20,
+        "max_mp" : 10,
+        "attack" : 5,
+        "defense" : 2,
+        "magic" : 0,
+        "resistance" : 0,
+        "speed" : 6,
+        "hp_growth" : 2,
+        "mp_growth" : 1,
+        "attack_growth" : 1,
+        "defense_growth" : 1,
+        "magic_growth" : 0,
+        "resistance_growth" : 1,
+        "speed_growth" : 1
+    }
+}

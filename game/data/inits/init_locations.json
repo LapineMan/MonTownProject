@@ -1,0 +1,91 @@
+[
+    {
+        "id" : "reina_plaza",
+        "name": "Villa's Plaza",
+        "background": "kiosk",
+        "has_night_light": true
+    },
+    {
+        "id" : "reina_gate",
+        "name": "Mansion Gates",
+        "background": "gates_1",
+        "static_bg": true,
+        "has_night_light": true,
+        "map_change": {
+            "maps" : ["reina_villa"]
+        }
+    },
+    {
+        "id" : "reina_shop",
+        "name": "Villa's Store",
+        "background": "shop_1",
+        "is_indoors": true,
+        "has_night_light": true,
+        "shop":{
+            "shopkeeper": "shopkeeper1",
+            "items": ["item_bandage_1"],
+            "open_range": ["MORNING","EVENING"]
+        }
+    },
+    {
+        "id" : "reina_farm",
+        "name": "Villa's Farm",
+        "background": "farm",
+        "has_night_light": true,
+        "adventure":{
+            "enounters":[],
+            "items":[]
+        }
+    },
+    {
+        "id" : "villa_exit",
+        "name": "Villa's Exit",
+        "background": "forest_path_1",
+        "map_change": {
+            "maps" : ["reina_villa"]
+        }
+    },
+    {
+        "id" : "reina_dining",
+        "name": "Dining Room",
+        "background": "dining_room_1",
+        "is_indoors": true,
+        "has_night_light": true
+    },
+    {
+        "id" : "reina_guest",
+        "name": "Guest Room",
+        "background": "bedroom_1",
+        "owner": ["player", 0],
+        "is_indoors": true,
+        "has_night_light": true,
+        "is_private": true,
+        "is_room": true
+    },
+    {
+        "id" : "reina_bedroom",
+        "name": "Reina's Room",
+        "background": "bedroom_3",
+        "is_bedroom": true,
+        "is_indoors": true,
+        "has_night_light": true,
+        "owner": ["reina", 100]
+    },
+    {
+        "id" : "reina_kitchen",
+        "name": "Mansion Kitchen",
+        "background": "kitchen_1",
+        "is_indoors": true,
+        "has_night_light": true,
+        "can_cook": true
+    },
+    {
+        "id" : "reina_office",
+        "name": "Reina's Office",
+        "background": "living_room_3",
+        "is_indoors": true,
+        "has_night_light": true,
+        "is_private": true,
+        "owner": ["reina", 0]
+    }
+]

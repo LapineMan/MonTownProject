@@ -62,7 +62,7 @@ init 20 python:
 
 
     # Used for the simple attack action, no skill nor specials
-    def attack_action(attacker:RPG_Stats, targets:[RPG_Stats]):
+    def attack_action(attacker:RpgStats, targets:[RpgStats]):
         for t in targets:
             attack(attacker, t)
 

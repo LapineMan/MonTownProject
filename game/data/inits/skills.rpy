@@ -19,7 +19,7 @@ init 2 python:
         description = "Perform 2 attack actions at once, second strike deals reduced damage"
 
         @classmethod
-        def use(cls, attacker:RPG_Stats, targets:[RPG_Stats]):
+        def use(cls, attacker:RpgStats, targets:[RpgStats]):
             target = targets[0]
             renpy.say(None, "{} switfly strikes {} twice!".format(attacker.name, target.name))
             dmgDealt = attack(attacker, target)

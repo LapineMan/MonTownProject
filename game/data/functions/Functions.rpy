@@ -77,20 +77,20 @@ init 0 python:
 
 
     #Function that erases and calls other functions to know what to draw
-    def updateScene(transition=None):
+    def update_scene(transition=None):
         renpy.scene()
         if(transition != None):
             renpy.with_statement(transition)
-        showCurrentBG(world, clock)
-        characterlist.get_present_characters(world, clock)
-        showCurrentCharacter(characterlist)
+        show_current_background(world, time_manager)
+        character_list.set_present_characters(world, time_manager)
+        #show_current_character(character_list)
 
 
     #Display the selected character
     #FIX this
-    def showCurrentCharacter(characterList):
-        if(not characterList.present_is_empty()):
-            sel = characterList.get_selected_character()
+    def show_current_character(characterList):
+        if(not len(characterList.characters)):
+            sel = characterList.get_current_character()
             next = characterList.get_next_character()
             prev = characterList.get_prev_character()
             #renpy.with_statement(move)
@@ -104,10 +104,19 @@ init 0 python:
 
 
     #Display current location
-    def showCurrentBG(world, clock):
-        renpy.show("{}_{}".format(world.get_current_location_file_name(), clock.getDayTime() ), )
+    def show_current_background(world, time_manager):
+        loc = world.get_current_location()
+        light = "_{}".format(time_manager.current_phase.value[1])
+        if(loc.static_background):
+            light = ""
+        elif(time_manager.current_phase == PhaseOfDay.NIGHT):
+            if(not loc.has_night_light):
+                light = "_{}".format(PhaseOfDay.MIDNIGHT.value[1])
+
+        renpy.show("bg_{}{}".format(loc.bg, light))
 
     #button stuff: recieves boolean, False is left, True is Right
+    # TODO: This may be deleted
     def selectCharacter(dir, ind):
         #print("Selected Char before func {}".format(ind))
         if(ind > len(presentCharacters) - 1):
@@ -132,9 +141,14 @@ init 0 python:
             return "Chien said: File in {} not found".format(dir)
 
     def get_data_from_json(dir:str):
-        decoder = json.JSONDecoder()
-        data = decoder.decode(renpy.file(dir, encoding="UTF-8").read())
-        return data
+        try:
+            decoder = json.JSONDecoder()
+            data = decoder.decode(renpy.file(dir, encoding="UTF-8").read())
+            return data
+        except:
+            print("Could not find file: {}".format(dir))
+            return None
+
 
     def get_data_from_json2(dir:str):
         data = renpy.file("{}.json".format(dir), encoding = "UTF-8")
@@ -193,65 +207,3 @@ init 0 python:
                 return False
 
         return True
-
-    def set_player_growths(player, boon, bane):
-        #           0HP 1MP 2ATK 3DFN 4MAG 5RES 6SPD 7WIL
-        base_stats = [30, 15, 20, 15, 5, 0, 15, 30]
-        base_growths = [3, 3, 3, 3, 3, 3, 0, 3]
-
-        # Set booner
-        if(boon == 0):
-            base_stats[2] -= 5
-            base_stats[3] -= 5
-            base_growths[2] -= 1
-            base_growths[3] -= 1
-
-        elif(boon == 1):
-            base_stats[1] -= 10
-            base_stats[4] -= 5
-            base_stats[5] -= 5
-            base_growths[1] -= 2
-            base_growths[4] -= 2
-            base_growths[5] -= 1
-
-        elif(boon == 2):
-            base_stats[1] -= 5
-            base_stats[6] -= 5
-            base_growths[1] -= 2
-            base_growths[6] -= 2
-
-        elif(boon == 3):
-            base_stats[0] -= 10
-            base_stats[7] -= 5
-            base_growths[0] -= 2
-            base_growths[7] -= 2
-
-        # Set bane
-        if(bane == 0):
-            base_stats[2] -= 5
-            base_stats[3] -= 5
-            base_growths[2] -= 1
-            base_growths[3] -= 1
-
-        elif(bane == 1):
-            base_stats[1] -= 10
-            base_stats[4] -= 5
-            base_stats[5] -= 5
-            base_growths[1] -= 2
-            base_growths[4] -= 2
-            base_growths[5] -= 1
-
-        elif(bane == 2):
-            base_stats[1] -= 5
-            base_stats[6] -= 5
-            base_growths[1] -= 2
-            base_growths[6] -= 2
-
-        elif(bane == 3):
-            base_stats[0] -= 10
-            base_stats[7] -= 5
-            base_growths[0] -= 2
-            base_growths[7] -= 2
-
-        player.set_base_stats(base_stats)
-        player.set_base_growths(base_growths)

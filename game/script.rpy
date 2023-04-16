@@ -1,6 +1,7 @@
 ﻿# The script of the game goes in this file.
 init 0 python:
     import sys
+    import typing
     import renpy.store as store
     import renpy.exports as renpy # we need this so Ren'Py properly handles rollback with classes
     import random
@@ -70,15 +71,28 @@ label start:
     return
 
 label char_test:
-    scene black with fade
+    play music "audio/music/Relax.mp3"
+    scene bg_farm_day
+    show black at customAlpha(0.5)
+    with fade
     "Start test"
     window hide
-
-    show baphi_face
-
+    show chien ey_side eb_upset at center
+    show greenslime ey_circles mo_upset eb_upset at left, awesomeTint
+    with dissolve
+    "Chien sprite and tail test"
+    show chien ey_mid
+    "Chien!" with hpunch
+    "Player" "Who is a good girl?"
+    show chien eb_mid ta_slowwag
     pause
-    "End Test"
-    jump start
+    "Player" "Who is THE BEST GIRL?!"
+    show chien ey_open eb_up ta_wag
+    pause
+    "Chien's bad mood seemingly dissappeared"
+    show chien ey_closed eb_up ta_fastwag blush at quickJumps(20)
+    pause
+    jump game_over
 
 label Layered_Test:
     "Start"
@@ -131,22 +145,21 @@ label init_game:
         player.skills.append(Skill_Double_Strike())
 
         # Init Characters
-        characterlist = CharacterList()
+        character_list = CharacterList()
 
         # Init World
         world = World()
 
         # Init Clock
-        clock = Clock()
-
-        # c = generate_characters(characterlist.characters)
+        time_manager = TimeManager()
 
         # Init event triggers and append first event
-        eventTriggers = []
-        eventTriggers.append(Event_Trigger("Reina_Boris_Intro", 0, None, None, None))
+        event_manager = EventManager()
+
+        event_manager.add_event("Reina_Boris_Intro", location = "reina_gate")
 
         # Init quest object
-        questLog = QuestLog()
+        quest_log = QuestLog()
 
         # Temp variable
 
@@ -212,24 +225,6 @@ label waking_up:
     #check for morning events
     "This is the start of another day..."
 
-label Town_Label:
-    #Check for events
-    scene black
-    python:
-        renpy.block_rollback()
-        check_and_call_for_events(eventTriggers, world.get_current_location(), None, clock.getHrs())
-        renpy.scene()
-        #renpy.with_statement(transition)
-        showCurrentBG(world, clock)
-        characterlist.get_present_characters(world, clock)
-
-    show screen Character_Select_Screen
-    show screen Town_UI(player, inventory, questLog)
-    with dissolve
-    while True:
-        pause
-    return
-
 label Character_Interaction_Label:
     scene
     python:
@@ -284,25 +279,3 @@ label Old_Town_Label:
             "Investigate Area":
                 "A"
     return
-
-label clock_test:
-    show screen TimePlace
-    while True:
-        $updateScene()
-        menu:
-            "Add hour":
-                $clock.passTime(1, 0)
-            "Add 5 hours":
-                $clock.passTime(5, 0)
-            "Add 12 hours":
-                $clock.passTime(12, 0)
-            "Add min":
-                $clock.passTime(0, 1)
-            "Add 10 mins":
-                $clock.passTime(0, 10)
-            "Add 30 mins":
-                $clock.passTime(0, 30)
-            "Change style":
-                $clock.timeMode = not clock.timeMode
-            "Return":
-                jump start

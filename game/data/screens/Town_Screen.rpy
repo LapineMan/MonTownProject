@@ -2,10 +2,6 @@
 screen Town_UI(player, inventory, questLog):
 
     # Variables to use
-    python:
-        currTime = clock.getTime()
-        currPlace = world.get_current_location_name()
-
     hbox:
         xalign 0.0
         yalign 0.025

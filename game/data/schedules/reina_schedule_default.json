@@ -1,0 +1,9 @@
+[
+    ["reina_dining", "IDLE"],
+    ["reina_office", "WORKING"],
+    ["reina_plaza", "RESTING"],
+    ["reina_shop", "WORKING"],
+    ["reina_plaza", "LEISURE"],
+    ["reina_bedroom", "WORKING"],
+    ["reina_bedroom", "SLEEPING"]
+]

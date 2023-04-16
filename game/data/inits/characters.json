@@ -1,0 +1,37 @@
+[
+    {
+        "name" : "Charna",
+        "color": "#db79a0",
+        "id": "charna",
+        "fileName" : "charna",
+        "predisposition" : ["SAD", 0.2]
+    },
+    {
+        "name" : "Reina",
+        "color": "#9c9eb7",
+        "id": "reina",
+        "fileName" : "reina",
+        "predisposition" : ["HAPPY", 0.4]
+    },
+    {
+        "name" : "Belial",
+        "color" : "#656b89",
+        "id": "belial",
+        "fileName" : "belial",
+        "predisposition" : ["ANGRY", 0.1]
+    },
+    {
+        "name" : "Chien",
+        "color": "#c8aa89",
+        "id" : "chien",
+        "fileName" : "chien",
+        "predisposition" : ["HAPPY", 0.4]
+    },
+    {
+        "name" : "Lapin",
+        "color": "#f8db8f",
+        "id": "lapin",
+        "fileName" : "lapin",
+        "predisposition" : ["NEUTRAL", 0.3]
+    }
+]

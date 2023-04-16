@@ -22,13 +22,13 @@ label baphi_game_over:
     pause 5
     show baphi_face looking with dissolve
     pause 12
-    play music "sounds/music/Adi-Eu.mp3" volume 0.2 fadein 15.0 loop
+    #play music "sounds/music/Adi-Eu.mp3" volume 0.2 fadein 15.0 loop
     $quick_menu = False
     show baphi_face eyes
     pause 5
     show baphi_face twitch
     pause 10
-    play music "<from 26.5>sounds/music/Adi-Eu.mp3" volume 1.25
+    #play music "<from 26.5>sounds/music/Adi-Eu.mp3" volume 1.25
     show baphi_face -twitch red lines_1 lines_2 lines_3 at h_shake(6)
     pause 6
     scene red
@@ -36,12 +36,12 @@ label baphi_game_over:
     with wet
     $count = 30
     while count > 0:
-        play music "<from 44>sounds/music/Adi-Eu.mp3" volume 1.5
+        #play music "<from 44>sounds/music/Adi-Eu.mp3" volume 1.5
         pause 0.1
         $count -= 1
     hide black
     show baphi_face at truecenter, red_tint
-    play music "<from 42>sounds/music/Adi-Eu.mp3" volume 2.0
+    #play music "<from 42>sounds/music/Adi-Eu.mp3" volume 2.0
     pause 0.1
     stop music
     $quick_menu = True

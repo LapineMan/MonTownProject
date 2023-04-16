@@ -1,0 +1,30 @@
+{
+    "name": "Reina's Villa (Outside)",
+    "locations":[
+        {
+            "loc_id": "reina_plaza",
+            "xpos":652,
+            "ypos":361
+        },
+        {
+            "loc_id": "reina_gate",
+            "xpos":976,
+            "ypos":359
+        },
+        {
+            "loc_id": "reina_shop",
+            "xpos":448,
+            "ypos":555
+        },
+        {
+            "loc_id": "reina_farm",
+            "xpos":211,
+            "ypos":181
+        },
+        {
+            "loc_id": "villa_exit",
+            "xpos":151,
+            "ypos":360
+        }
+    ]
+}

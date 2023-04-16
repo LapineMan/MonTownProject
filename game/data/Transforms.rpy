@@ -1,23 +1,44 @@
 #Transforms
+transform main_menu_stars_anim:
+    xalign 0.5
+    yalign 0.5
+    linear 180.0 rotate 360
+    repeat
+# shitpost
+transform awesomeTint:
+    linear 0.5 matrixcolor TintMatrix("#DFFF00")
+    linear 0.5 matrixcolor TintMatrix("#FFBF00")
+    linear 0.5 matrixcolor TintMatrix("#FF7F50")
+    linear 0.5 matrixcolor TintMatrix("#DE3163")
+    linear 0.5 matrixcolor TintMatrix("#9FE2BF")
+    linear 0.5 matrixcolor TintMatrix("#40E0D0")
+    linear 0.5 matrixcolor TintMatrix("#6495ED")
+    linear 0.5 matrixcolor TintMatrix("#CCCCFF")
+    repeat
 
 # Story
 transform slowHPan(n):
     xalign 0.0
     easein n xalign 1.0
 
-transform quickJump:
-    easein 0.25 yoffset -100
-    easeout 0.25 yoffset 0
+transform quickJump(n):
+    easein 0.2 yoffset -n
+    easeout 0.2 yoffset 0
 
-transform quickJumps:
-    easein 0.25 yoffset -100
-    easeout 0.25 yoffset 0
+transform quickJumps(n):
+    easein 0.2 yoffset -n
+    easeout 0.2 yoffset 0
     repeat
 
 # Transitions
 define slow_fade = Fade(1.5, 1.0, 1.5)
 
 # Customs
+transform cameraZoomAnim(a = (0.5, 0.5), t = 1, z = 1):
+    align a
+    linear t zoom z
+
+
 transform customTransparent(n):
     matrixcolor Matrix([ 1.0, 0.0, 0.0, 0.0,
                          0.0, 1.0, 0.0, 0.0,
@@ -26,6 +47,9 @@ transform customTransparent(n):
 
 transform flip:
     xzoom -1
+
+transform customXZoom(n):
+    xzoom n
 
 transform customYAlign(n):
     yalign n

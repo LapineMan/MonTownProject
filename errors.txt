@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/story/Intro_1.rpy", line 302: Only one say menuitem may exist per menu.
-    rei "You should take a rest now, if they are coming back you should be prepared"
-                                                                                    ^
+File "game/data/Locations_Obj.rpy", line 123: is not terminated with a newline. (Check strings and parenthesis.)
+                self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map)
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Wed Jan 11 22:10:20 2023
+Wed Apr 12 12:48:34 2023

@@ -1,30 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/special_labels/game_over.rpy", line 36, in script
-    with slow_wet(6, 5)
-  File "game/special_labels/game_over.rpy", line 36, in <module>
-    with slow_wet(6, 5)
-TypeError: object of type 'int' has no len()
+  File "game/script.rpy", line 140, in script
+    python:
+  File "game/script.rpy", line 151, in <module>
+    world = World()
+  File "game/data/Locations_Obj.rpy", line 103, in __init__
+    self.get_map_data()
+  File "game/data/Locations_Obj.rpy", line 123, in get_map_data
+    self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map))
+NameError: name 'world' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/special_labels/game_over.rpy", line 36, in script
-    with slow_wet(6, 5)
-  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 1651, in execute
-    trans = renpy.python.py_eval(self.expr)
-  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\python.py", line 1080, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\python.py", line 1073, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/special_labels/game_over.rpy", line 36, in <module>
-    with slow_wet(6, 5)
-  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\transition.py", line 527, in __init__
-    ramplen = len(ramp)
-TypeError: object of type 'int' has no len()
+  File "game/script.rpy", line 140, in script
+    python:
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\python.py", line 1049, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 151, in <module>
+    world = World()
+  File "game/data/Locations_Obj.rpy", line 103, in __init__
+    self.get_map_data()
+  File "game/data/Locations_Obj.rpy", line 123, in get_map_data
+    self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map))
+NameError: name 'world' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.0.1.22070801
 Monster Town Project 0.01
-Thu Jan 19 18:19:38 2023
+Wed Apr 12 12:49:26 2023

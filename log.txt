@@ -1,48 +1,1159 @@
-Fri Jan 20 21:22:48 2023
+Wed Apr 12 12:26:48 2023
 Windows-10-10.0.19041
 Ren'Py 8.0.1.22070801
  
 
-Bootstrap to the start of init.init took 0.05s
+Bootstrap to the start of init.init took 0.06s
 Early init took 0.00s
-Loader init took 0.33s
-Loading error handling took 0.04s
-Loading script took 0.59s
-Loading save slot metadata. took 0.11s
+Loader init took 0.43s
+Loading error handling took 0.02s
+Loading script took 0.43s
+Loading save slot metadata. took 0.09s
 Loading persistent took 0.00s
-Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
-Running init code took 0.10s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
-Index archives took 0.00s
-Dump and make backups. took 0.05s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.02s
+
+File "game/data/screens/map_screen.rpy", line 23: 'continue' is not a keyword argument or valid child for the for statement.
+    continue
+            ^
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 28.10s
+Early init took 0.00s
+Loader init took 0.12s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.09s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.12s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.15s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/[world.current_map]_map.json
+
+Full traceback:
+  File "game/script.rpy", line 167, in script call
+    "Finished Initialization"
+  File "renpy/common/00console.rpy", line 1093, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\exports.py", line 3161, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 17, in execute
+    frame:
+  File "game/data/screens/map_screen.rpy", line 17, in keywords
+    frame:
+  File "game/data/screens/map_screen.rpy", line 18, in <module>
+    background "images/maps/{}_map".format(map_data["name"])
+TypeError: 'NoneType' object is not subscriptable
+
+While running game code:
+  File "game/script.rpy", line 167, in script call
+    "Finished Initialization"
+  File "renpy/common/00console.rpy", line 1093, in script call
+    python in _console:
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 17, in execute
+    frame:
+  File "game/data/screens/map_screen.rpy", line 17, in keywords
+    frame:
+  File "game/data/screens/map_screen.rpy", line 18, in <module>
+    background "images/maps/{}_map".format(map_data["name"])
+TypeError: 'NoneType' object is not subscriptable
+Resetting cache.
+Bootstrap to the start of init.init took 101.63s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.05s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 167, in script call
+    "Finished Initialization"
+  File "renpy/common/00console.rpy", line 1093, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\exports.py", line 3161, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 19, in execute
+    for l in map_data["locations"]:
+  File "game/data/screens/map_screen.rpy", line 23, in execute
+    if(current_location.locState == LocState.NORMAL):
+  File "game/data/screens/map_screen.rpy", line 23, in <module>
+    if(current_location.locState == LocState.NORMAL):
+AttributeError: 'Location' object has no attribute 'locState'
+
+While running game code:
+  File "game/script.rpy", line 167, in script call
+    "Finished Initialization"
+  File "renpy/common/00console.rpy", line 1093, in script call
+    python in _console:
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 19, in execute
+    for l in map_data["locations"]:
+  File "game/data/screens/map_screen.rpy", line 23, in execute
+    if(current_location.locState == LocState.NORMAL):
+  File "game/data/screens/map_screen.rpy", line 23, in <module>
+    if(current_location.locState == LocState.NORMAL):
+AttributeError: 'Location' object has no attribute 'locState'
+Resetting cache.
+Bootstrap to the start of init.init took 149.36s
+Early init took 0.00s
+Loader init took 0.20s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.05s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 195.59s
+Early init took 0.00s
+Loader init took 0.14s
+Loading error handling took 0.02s
+Loading script took 0.20s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.06s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.30s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 210.09s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.10s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 262.48s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/data/screens/map_screen.rpy", line 60: 'name' is not a keyword argument or valid child for the text statement.
+    text "map_data["name"]"
+                        ^
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 267.41s
+Early init took 0.00s
+Loader init took 0.12s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.07s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 299.45s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.20s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 318.85s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 336.88s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 1135.39s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1164.16s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.27s
 Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.08s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.12s
+Interface start took 0.06s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 527.56'
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Could not find file: data/map_data/reina_villa_map.json
+Resetting cache.
+Bootstrap to the start of init.init took 1232.37s
+Early init took 0.00s
+Loader init took 0.16s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/data/Locations_Obj.rpy", line 102: is not terminated with a newline. (Check strings and parenthesis.)
+                self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map)
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1242.00s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.07s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1256.44s
+Early init took 0.00s
+Loader init took 0.13s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/data/Locations_Obj.rpy", line 122: is not terminated with a newline. (Check strings and parenthesis.)
+                get_data_from_json("data/map_data/{}_map.json".format(world.current_map)
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.34s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1261.40s
+Early init took 0.00s
+Loader init took 0.12s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/data/Locations_Obj.rpy", line 122: is not terminated with a newline. (Check strings and parenthesis.)
+                self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map)
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1278.58s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.20s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/data/Locations_Obj.rpy", line 123: is not terminated with a newline. (Check strings and parenthesis.)
+                self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map)
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.34s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1300.33s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.20s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/data/Locations_Obj.rpy", line 123: is not terminated with a newline. (Check strings and parenthesis.)
+                self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map)
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1305.22s
+Early init took 0.00s
+Loader init took 0.10s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/data/Locations_Obj.rpy", line 123: is not terminated with a newline. (Check strings and parenthesis.)
+                self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map)
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.33s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1331.52s
+Early init took 0.00s
+Loader init took 0.11s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 168, in script call
+    menu:
+  File "renpy/common/00console.rpy", line 1093, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\exports.py", line 3161, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 12, in execute
+    default map_data = world.map_data
+  File "game/data/screens/map_screen.rpy", line 12, in <module>
+    default map_data = world.map_data
+AttributeError: 'World' object has no attribute 'map_data'
+
+While running game code:
+  File "game/script.rpy", line 168, in script call
+    menu:
+  File "renpy/common/00console.rpy", line 1093, in script call
+    python in _console:
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 9, in execute
+    screen Map_Screen(world):
+  File "game/data/screens/map_screen.rpy", line 12, in execute
+    default map_data = world.map_data
+  File "game/data/screens/map_screen.rpy", line 12, in <module>
+    default map_data = world.map_data
+AttributeError: 'World' object has no attribute 'map_data'
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+
+Full traceback:
+  File "game/script.rpy", line 140, in script
+    python:
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\19497\Documents\RenPy\renpy-7.3.1-sdk\renpy\python.py", line 1049, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 151, in <module>
+    world = World()
+  File "game/data/Locations_Obj.rpy", line 103, in __init__
+    self.get_map_data()
+  File "game/data/Locations_Obj.rpy", line 123, in get_map_data
+    self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map))
+NameError: name 'world' is not defined
+
+While running game code:
+  File "game/script.rpy", line 140, in script
+    python:
+  File "game/script.rpy", line 151, in <module>
+    world = World()
+  File "game/data/Locations_Obj.rpy", line 103, in __init__
+    self.get_map_data()
+  File "game/data/Locations_Obj.rpy", line 123, in get_map_data
+    self.map_data = get_data_from_json("data/map_data/{}_map.json".format(world.current_map))
+NameError: name 'world' is not defined
+Resetting cache.
+Bootstrap to the start of init.init took 1370.47s
+Early init took 0.00s
+Loader init took 0.11s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'C:\\Users\\19497\\Documents\\RenPy\\renpy-7.3.1-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\19497\\AppData\\Roaming/RenPy/backups\\DearCharna':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Intel(R) UHD Graphics 630'
+Version: b'4.6.0 - Build 31.0.101.2111'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1720, 968) drawable=(1720, 968)
 Maximum texture size: 4096x4096
